@@ -1,9 +1,9 @@
-import webdav.client
+import webdav.client as _wdc
 
-class cloudstor(webdav.client.Client):
+class cloudstor(_wdc.Client):
 
     def __init__(self, private=False, url=None, password=None, username=None):
-       """Initialise a cloudstor webdav access instance for public or private
+        """Initialise a cloudstor webdav access instance for public or private
            access. Password is not stored anywhere unless you provide it in your
            script. It is not advisable to code a password directly in any script
            that you publish anywhere.
@@ -15,7 +15,6 @@ class cloudstor(webdav.client.Client):
            your online account password but this still provides unlimited access to
            your files.
         """
-
 
         import webdav
         from requests.auth import HTTPBasicAuth
