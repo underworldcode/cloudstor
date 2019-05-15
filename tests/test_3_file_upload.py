@@ -9,7 +9,6 @@ def test_public_mkdir():
 
 
 def test_public_upload(tmp_path):
-    global uploaded_successfully
     with open(tmp_path / "tmp_file.txt", mode="w") as f:
         f.write("This is an empty file")
 
