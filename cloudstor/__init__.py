@@ -14,6 +14,9 @@ class cloudstor(_wdc.Client):
            You can also obtain an app password that you can control separately to
            your online account password but this still provides unlimited access to
            your files.
+
+           You can also provide any password information via environment variables
+           if you prefer (see Examples)
         """
 
         import webdav
