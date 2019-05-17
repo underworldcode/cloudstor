@@ -96,16 +96,8 @@ class cloudstor(_wdc.Client):
             self.download_file(remote_file, local_tmp_file)
             return open(local_tmp_file, **kwargs)
 
+    
+
     @property
     def remote_type(self):
         return self._remote_type
-
-    # @remote_type.setter
-    # def remote_type(self, value):
-    #
-    #     if "directory" in value:
-    #         self._remote_type = "directory"
-    #     else:
-    #         self.remote_type = "file"
-
-        return

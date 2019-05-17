@@ -17,6 +17,3 @@ def test_read_file():
     with public_file.open("") as f:
         a = f.read()
     assert "information" in a
-
-
-## open ... is intercepted ... so ...
