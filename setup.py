@@ -5,9 +5,6 @@ import io
 
 ## instructions for upload to pypi
 
-
-
-
 this_directory = path.abspath(path.dirname(__file__))
 with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
         long_description = f.read()
@@ -25,6 +22,7 @@ if __name__ == "__main__":
           install_requires  = ['webdav'],
           setup_requires    = ["pytest-runner", 'webdav'],
           tests_require     = ["pytest", 'webdav'],
+          
           # package_data      = {'quagmire': ['Examples/Notebooks/data',
           #                                   'Examples/Notebooks/WorkedExamples/*.ipynb',  ## Leave out Unsupported
           #                                   'Examples/Notebooks/Tutorial/*.ipynb',

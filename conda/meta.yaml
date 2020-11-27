@@ -1,0 +1,48 @@
+{% set name = "cloudstor" %}
+{% set data = load_setup_py_data() %}
+
+package:
+  name: "{{ name|lower }}"
+  version: {{ data.get('version') }}
+
+source:
+    path: ..
+
+requirements:
+
+  host:
+    - python
+    - pip
+    - numpy
+    - webdav 
+
+  run:
+    - pip
+    - webdav
+
+
+test:
+  requires:
+    - pytest 
+
+  source_files:
+      - tests/test_0_import.py
+
+  commands:
+    - pytest
+
+
+
+about:
+  home: "https://github.com/underworldcode/cloudstor"
+  license: LGPL
+  license_family: GPL
+  license_file: LICENSE
+  summary: "Python interface to TRIPACK and STRIPACK fortran code for triangulation/interpolation in Cartesian coordinates and on a sphere"
+  doc_url: 
+  dev_url: 
+
+extra:
+  recipe-maintainers:
+    - lmoresi
+

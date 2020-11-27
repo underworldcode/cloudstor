@@ -1,0 +1,41 @@
+{% set name = "webdav" %}
+{% set data = load_setup_py_data() %}
+
+package:
+  name: "{{ name|lower }}"
+  version: {{ data.get('version') }}
+
+source:
+  git_url: https://github.com/kamikaze/webdav
+  git_rev: v1.1.7
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . -vv"
+
+requirements:
+
+  host:
+    - python
+    - pip
+    - lxml
+    - requests
+    - numpy
+
+  run:
+    - pip
+    - requests
+    - lxml
+
+
+
+about:
+  home: "https://github.com/kamikaze/webdav"
+  license: GPL-3.0
+  license_family: GPL
+  # license_file: ../LICENCE
+
+extra:
+  recipe-maintainers:
+    - lmoresi
+
