@@ -21,12 +21,22 @@ requirements:
     - lxml
     - requests
     - numpy
+    - pytest
 
   run:
     - pip
     - requests
     - lxml
 
+# test:
+#   requires:
+#     - pytest 
+
+#   source_files:
+#     - src/tests
+
+#   commands:
+#     - pytest
 
 
 about:
