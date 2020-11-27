@@ -48,7 +48,9 @@ jobs:
         shell: bash -l {0}
         run: |
             conda config --set anaconda_upload yes
+            conda config --add channels conda-forge
+            conda config --add channels geo-down-under
             anaconda login --hostname github-actions-${{ matrix.os  }}-$RANDOM --username ${{ secrets.ANACONDA_USERNAME }} --password ${{ secrets.ANACONDA_PASSWORD }}
-            conda-build --channel conda-forge --channel geo-down-under --user geo-down-under webdav-conda
-            conda-build --channel conda-forge --channel geo-down-under --user geo-down-under conda
+            conda-build --user geo-down-under webdav-conda
+            conda-build --user geo-down-under conda
             anaconda logout
