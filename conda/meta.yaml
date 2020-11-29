@@ -14,7 +14,8 @@ requirements:
     - python
     - pip
     - numpy
-    - webdav 
+    - webdav
+    - pytest 
 
   run:
     - pip
