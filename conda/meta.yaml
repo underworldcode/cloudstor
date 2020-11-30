@@ -40,7 +40,7 @@ about:
   license: LGPL
   license_family: GPL
   license_file: LICENSE
-  summary: "Python interface to TRIPACK and STRIPACK fortran code for triangulation/interpolation in Cartesian coordinates and on a sphere"
+  summary: "Python interface to the cloudstor (owncloud) storage facility provided by AARNET"
   doc_url: 
   dev_url: 
 
