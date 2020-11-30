@@ -23,15 +23,15 @@ requirements:
     - webdav
 
 
-test:
-  requires:
-    - pytest 
+# test:
+#   requires:
+#     - pytest 
 
-  source_files:
-      - tests/test_0_import.py
+#   source_files:
+#       - tests/test_0_import.py
 
-  commands:
-    - pytest
+#   commands:
+#     - pytest
 
 
 
