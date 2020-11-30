@@ -16,6 +16,7 @@ requirements:
     - numpy
     - webdav
     - pytest 
+    - pytest-runner
 
   run:
     - pip

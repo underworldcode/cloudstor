@@ -12,3 +12,5 @@ dependencies:
   - conda-build 
   - conda-verify
   - anaconda-client
+  - pytest 
+  
