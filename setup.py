@@ -20,8 +20,8 @@ if __name__ == "__main__":
           long_description_content_type='text/markdown',
           packages          = ['cloudstor'],
           install_requires  = ['webdav'],
-          setup_requires    = ["pytest-runner", 'webdav'],
-          tests_require     = ["pytest", 'webdav'],
+          setup_requires    = ['webdav'],
+          # tests_require     = ['pytest','webdav'],
           
           # package_data      = {'quagmire': ['Examples/Notebooks/data',
           #                                   'Examples/Notebooks/WorkedExamples/*.ipynb',  ## Leave out Unsupported
