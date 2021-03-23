@@ -14,7 +14,7 @@ if __name__ == "__main__":
           author            = "Louis Moresi",
           author_email      = "louis.moresi@anu.edu.au",
           url               = "https://github.com/underworldcode/cloudstor",
-          version           = "0.1.1",
+          version           = "0.1.2",
           description       = "Python access to AARNET cloudstor (owncloud) storage via webdav",
           long_description  = long_description,
           long_description_content_type='text/markdown',
