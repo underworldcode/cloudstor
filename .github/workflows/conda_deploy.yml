@@ -19,7 +19,7 @@ jobs:
       fail-fast: false
       matrix:
         os: ["ubuntu-latest", "macos-latest", "windows-latest"]
-        python-version: ["3.7"]  # 3.8 does not seem to generate any new files for conda and breaks on macos X ... revisit this later
+        python-version: ["3.7", "3.8"]  # 3.8 does not seem to generate any new files for conda and breaks on macos X ... revisit this later
     steps:
       - uses: actions/checkout@v2
 
