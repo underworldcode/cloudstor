@@ -72,6 +72,7 @@ class cloudstor(_wdc.Client):
             self._remote_type = "directory"
         else:
             self._remote_type = "file"
+           
 
         return
 
@@ -83,6 +84,58 @@ class cloudstor(_wdc.Client):
                 return True
         else:
             raise(RuntimeError("Invalid remote_path"))
+
+
+
+    def compare_remote(self, rpath, lpath):
+        """Compare remote and local files to see if they have the same SIZE 
+           and return true if they do. 
+
+           webdav does not give access to a remote checksum so this is, at best, 
+           a rough check to see if the remote file is changed or the downloaded file
+           is incomplete
+        """
+        import os
+
+        try:
+            lsize = int(os.path.getsize(lpath))
+        except:
+            lsize = 0
+            
+        rsize = int(self.info(rpath)["size"])
+            
+        return rsize == lsize
+
+    def download_file_if_distinct(self, remote_path, local_path, check_size=True, silent=False):
+        """Download the remote file to the local_path if the sizes differ"""
+
+        if check_size == False or self.compare_remote(remote_path, local_path) == False :
+            self.download_file(remote_path, local_path)
+            if not silent:
+                import os
+                from humanfriendly import format_size
+                try:
+                    lsize = int(os.path.getsize(local_path))
+                except:
+                    lsize = 0
+
+                print("Downloaded {} ({})".format(local_path, hsize))
+
+        else:
+            if not silent:
+                import os
+                from humanfriendly import format_size
+
+                try:
+                    lsize = int(os.path.getsize(local_path))
+                except:
+                    lsize = 0
+
+                hsize = format_size(lsize)
+                
+                print("Remote and local file size both {}, skipping - {}".format(hsize, local_path))
+
+        return
 
     ## Workaround for the assumption that the remote file name has information in it
     def open(self, remote_file=None, **kwargs):

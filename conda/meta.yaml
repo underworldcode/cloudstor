@@ -15,12 +15,14 @@ requirements:
     - pip
     - numpy
     - webdav
+    - humanfriendly
     - pytest 
     - pytest-runner
 
   run:
     - pip
     - webdav
+    - humanfriendly
 
 
 # test:
