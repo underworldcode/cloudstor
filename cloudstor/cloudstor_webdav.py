@@ -119,6 +119,7 @@ class cloudstor(_wdc.Client):
                 except:
                     lsize = 0
 
+                hsize = format_size(lsize)
                 print("Downloaded {} ({})".format(local_path, hsize))
 
         else:
